@@ -33,7 +33,7 @@ void PreenchendoVetor(int vet[MAX] ,int n){
 
     printf("Vetor Preenchido: ");
     for(int i=0;i < n;i++){
-        printf("%5d",vet[i]);
+        printf("%5d ",vet[i]);
     }
 }
 
