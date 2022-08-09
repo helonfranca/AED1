@@ -12,8 +12,7 @@
 
 int main(){
     int vet[MAX];
-    int i, j, n;
-    int aux = 0;
+    int n;
 
     printf("Digite o numero de elementos que deseja ordenar: ");
     scanf("%d",&n);
@@ -22,7 +21,19 @@ int main(){
 
     printf("\n");
 
+    double time_spent = 0.0;
+ 
+    clock_t begin = clock();
+
     selection_sort(vet,n);
+
+    clock_t end = clock();
+
+    // calcula o tempo decorrido encontrando a diferença (end - begin) e
+    // dividindo a diferença por CLOCKS_PER_SEC para converter em segundos
+    time_spent += (double)(end - begin) / CLOCKS_PER_SEC;
+ 
+    printf("\nO tempo decorrido eh de %.4f segundos", time_spent);
     
     return 0;
 }
@@ -43,7 +54,6 @@ void PreenchendoVetor(int vet[MAX] ,int n){
 }
 
 
-
 void selection_sort(int vet[], int n){
     int i, j, min, aux;
 
@@ -61,7 +71,6 @@ void selection_sort(int vet[], int n){
             vet[i] = vet[min];
             vet[min] = aux; 
         }
-        
     }
 
     printf("Vetor Ordenado: ");

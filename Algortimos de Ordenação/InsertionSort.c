@@ -1,5 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
+#include <unistd.h>
 #define MAX 1000
 
 /*Ordenação por Inserção:
@@ -18,9 +20,10 @@ originalmente na ordem reversa.
 poucos itens a um arquivo ordenado, pois o custo é
 linear.*/
 
+
 int main(){
     int vet[MAX];
-    int i, j, n;
+    int n;
     int aux = 0;
 
     printf("Digite o numero de elementos que deseja ordenar: ");
@@ -30,7 +33,19 @@ int main(){
 
     printf("\n");
 
+    double time_spent = 0.0;
+ 
+    clock_t begin = clock();
+
     InsertionSort(vet,n);
+
+    clock_t end = clock();
+
+    // calcula o tempo decorrido encontrando a diferença (end - begin) e
+    // dividindo a diferença por CLOCKS_PER_SEC para converter em segundos
+    time_spent += (double)(end - begin) / CLOCKS_PER_SEC;
+ 
+    printf("\nO tempo decorrido eh de %.4f segundos", time_spent);
     
     return 0;
 }

@@ -1,14 +1,14 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
+#include <unistd.h>
 #define MAX 1000
 
 //Ordenação por troca - útil para ordenação de vetores pequenos (desempenho ruim).
 
 int main(){
     int vet[MAX];
-    int i, j, n;
-    int aux = 0;
+    int n;
 
     printf("Digite o numero de elementos que deseja ordenar: ");
     scanf("%d",&n);
@@ -16,8 +16,20 @@ int main(){
     PreenchendoVetor(vet, n);
 
     printf("\n");
+    
+    double time_spent = 0.0;
+ 
+    clock_t begin = clock();
 
     BubbleSort(vet,n);
+
+    clock_t end = clock();
+
+    // calcula o tempo decorrido encontrando a diferença (end - begin) e
+    // dividindo a diferença por CLOCKS_PER_SEC para converter em segundos
+    time_spent += (double)(end - begin) / CLOCKS_PER_SEC;
+ 
+    printf("\nO tempo decorrido eh de %.4f segundos", time_spent);
     
     return 0;
 }
