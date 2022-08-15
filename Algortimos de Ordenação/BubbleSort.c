@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
-#define MAX 1000
+#define MAX 50000
 
 //Ordenação por troca - útil para ordenação de vetores pequenos (desempenho ruim).
 

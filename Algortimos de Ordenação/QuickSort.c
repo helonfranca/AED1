@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#define MAX 1000
+#define MAX 50000
 
 /*Quick Sort
 
@@ -84,7 +84,7 @@ void PreenchendoVetor(int vet[MAX] ,int n){
     }
 }
 
-void quick_sort(int *vet, int left, int right){
+void quick_sort(int vet[], int left, int right){
     int i, j, x, y;
      
     i = left;

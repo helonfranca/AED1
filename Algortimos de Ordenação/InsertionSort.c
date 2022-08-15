@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#define MAX 1000
+#define MAX 50000
 
 /*Ordenação por Inserção:
 Em cada passo a partir de i=2 faça:
